@@ -1,0 +1,23 @@
+alert ("Olá mundo!")
+// // alert ("SEGUNDA MENSAGEM")
+// let nome 
+
+
+// nome = "Bibia"
+
+// // alert ("Nome:" + nome)
+//  let idade = 22
+// // alert ("Idade:" + idade)
+
+// // alert ("Nome: " + nome + "\nIdade:"+ idade)
+
+// // nome = prompt("Digite seu nome:") 
+// // alert ("Nome digitado:" + nome)
+
+
+
+// let notal
+// nota1 = prompt ("Digite a primeira nota:")
+// nota1 = Number (nota1)
+// nota1 = nota1 + 1
+// alert (nota1)
