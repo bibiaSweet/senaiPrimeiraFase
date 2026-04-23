@@ -1,4 +1,4 @@
-alert ("Olá mundo!")
+// alert ("Olá mundo!")
 // // alert ("SEGUNDA MENSAGEM")
 // let nome 
 
@@ -21,3 +21,23 @@ alert ("Olá mundo!")
 // nota1 = Number (nota1)
 // nota1 = nota1 + 1
 // alert (nota1)
+
+//================================
+
+// informações
+let vitorias, empates
+let pontos
+
+// leituras
+vitorias = prompt ("Vitórias:")
+vitorias = Number (vitorias)
+
+empates = Number (prompt("Empates"))
+
+// processamentos
+pontos =  vitorias * 3 + empates 
+
+// saídas 
+alert ("Total de pontos: " + pontos)
+
+//================================
