@@ -32,7 +32,7 @@ let pontos
 vitorias = prompt ("Vitórias:")
 vitorias = Number (vitorias)
 
-empates = Number (prompt("Empates"))
+empates = Number (prompt("Empates:"))
 
 // processamentos
 pontos =  vitorias * 3 + empates 
