@@ -1,9 +1,9 @@
-let clt, estagiario, pj, Total
+let clt, estagiario, pj, total
 
 clt = Number (prompt ("Número de CLT:"))
 estagiario = Number (prompt ("Número de estagiários:"))
 pj = Number (prompt ("Número de PJ:"))
 
-total = clt + estagiarios + pj
+total = clt + estagiario + pj
 
-conso
+console.log ("Número total de Devs: " + total)
