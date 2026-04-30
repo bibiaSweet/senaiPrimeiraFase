@@ -1,0 +1,16 @@
+body {
+background-color: #ffb3c1;
+color: #c9184a;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: small;
+}
+button{
+background-color:#a4133c;
+color: #fff0f3;
+padding: 10px;
+border-radius: 0in;
+border: none; 
+margin: 5;
+}
+/* 590d22 800f2f a4133c c9184a ff4d6d ff758f ff8fa3 ffb3c1 ffccd5 fff0f3*/
+
