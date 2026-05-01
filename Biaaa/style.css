@@ -1,0 +1,63 @@
+Com certeza! Sua paleta de cores é excelente (tons de rosa e vinho são ótimos para um visual chic ou moderno), mas o que impede o código de parecer "profissional" são detalhes de espaçamento, tipografia e interatividade.
+
+Para um look profissional, precisamos focar em legibilidade, espaçamento consistente (respiro) e feedback visual (efeitos de hover).
+
+Aqui está a versão refinada:
+
+CSS
+:root {
+  /* Organizar as cores em variáveis facilita a manutenção */
+  --bg-color: #ffccd5;
+  --main-accent: #c9184a;
+  --button-bg: #a4133c;
+  --button-hover: #800f2f;
+  --text-light: #fff0f3;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--main-accent);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* 'small' costuma ser difícil de ler. 16px é o padrão profissional. */
+  font-size: 16px; 
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--text-light);
+  
+  /* Padding assimétrico (lados maiores que o topo) é mais elegante */
+  padding: 12px 24px; 
+  
+  /* Bordas levemente arredondadas são mais modernas que 0 ou total */
+  border-radius: 6px; 
+  border: none;
+  margin: 10px;
+  
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  
+  /* Transição suave para o efeito de hover */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* O toque profissional: feedback quando o usuário passa o mouse */
+button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}

@@ -17,7 +17,7 @@ document.getElementById("resultado03").innerHTML = "Chance de aprovação: " + c
 
 
 
-function calcularPrecoBrique(){
+function romeroBrique(){
 // infos
 let valorCompra, valorVenda
 
@@ -69,5 +69,52 @@ function verificarProvisoes () {
     }else {
         document.getElementById ("resultado01").innerHTML = "Algo está errado. Posseidom não quer ninguém no mar hoje."
     } }
+
+    // ======================================================================= // 
+
+function juninSalarioDiario () {
+
+    let salario, dias, salarioDiario 
+salario = Number (prompt ("Digite seu salário: "))
+dias = Number (prompt ("Digite quantos dias trabalhou no mês:"))
+salarioDiario = salario / dias
+document.getElementById ("resultado05").innerHTML = "Junin recebe por dia: " + salarioDiario.toFixed(2)
+
+    // ======================================================================= // 
+
+function peba
+
+    let vitorias, empates, pontos
+vitorias = Number (prompt ("Digite o número de vitórias: "))
+empates = Number (prompt ("Digite o número de empates: "))
+pontos = (vitorias * 3) + empates
+document.getElementById ("resultado06").innerHTML = "Quantidade de pontos: " +
+
+    // ======================================================================= // 
+
+    function peErnanBuco  () {
+
+let  custos, doacao, dizimo, divida
+ 
+custos = Number (prompt ("Digite os custos:"))
+doacao = Number (prompt("Digite as doações:"))
+dizimo = Number (prompt ("Digite o valor do dízimo:"))
+
+divida = custos - doacao - dizimo
+
+document.getElementById ("resultado07").innerHTML ="O valor da divída será de: R$" + divida.toFixed (2)}
+
+    // ======================================================================= // 
+
+    function tellesTransportesPeso () {
+
+    let pesoBrutoTotal, tara, pesoDaCarga
+
+pesoBrutoTotal = Number (prompt ("Digite o peso bruto total:"))
+tara = Number (prompt ("Digite a tara: "))
+
+pesoDaCarga = pesoBrutoTotal - tara
+
+document.getElementById ("resultado08").innerHTML = "O peso da carga é de: " + pesoDaCarga }
 
     // ======================================================================= // 
