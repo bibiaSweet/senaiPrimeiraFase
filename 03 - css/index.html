@@ -1,7 +1,5 @@
-<!-- ao clicar ! -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,46 +9,70 @@
 <body>
     <h1>DESENVOLVIMENTO DE SISTEMAS - SENAI fase I</h1>
     <h2>js l html l css</h2>
-    <!-- <hr> linha horinzontal -->
-    <hr>
-    <!-- <button>caixa tipo botao</button> -->
-     <button onclick="romeroBrique()">ROMERO BRIQUE e a política de preços</button>
-               <output id="resultado04">  </output>  
-               <hr>
-     <!-- <output>pro js achar o html</output> -->
-     <button onclick="monika()">MONIKA e as chances dos candidatos a dev</button>
-         <output id="resultado03">  </output>  
-         <hr>
-     <button onclick="guilhermeportões ()">GUILHERME PORTÕES e a força de trabalho da Macrohard</button>
-          <output id="resultado02">  </output>  
-          <hr>
-     <button onclick="verificarProvisoes() ">controle de tripulação e provisões do CAPITÃO GANSO</button>
-          <output id="resultado01">  </output>  
-          <hr>
-     <button onclick="juninSalarioDiario() ">JUNIN e o salário diário</button>
-          <output id="resultado05">  </output>  
-          <hr>
-     <button onclick="peba() ">PEBA e o campeonato de futebol</button>
-          <output id="resultado06">  </output>  
-          <hr>
-     <button onclick="peErnanBuco() ">PE. ERNAN BUCO e os custosda Igreja</button>
-          <output id="resultado07">  </output>  
-          <hr>
-    <button onclick="tellesTransportePeso() ">TELLES TRANSPORTES e o peso dos fretes</button>
-          <output id="resultado08">  </output>  
-          <hr>
-
-
-
-     
-
-   
+    <hr> <hr><hr>
     
-     
-    
-     
-     <script src="script.js"></script>
+    <!-- Adicionamos o onclick aqui para chamar a nova função passando o ID do grupo que queremos abrir -->
+    <button class="btn-invertido" onclick="alternarVisibilidade('grupo1')">{#0011} Exercicios básicos portugol</button>
+    <hr> <hr> <hr>
+
+    <!-- INÍCIO DO GRUPO 1: Agrupamos todos os botões e outputs desta seção dentro de uma div -->
+    <div id="grupo1" class="conteudo-oculto">
+        <button onclick="romeroBrique()">ROMERO BRIQUE e a política de preços</button>
+        <output id="resultado04"></output>  
+        <hr>
+
+        <button onclick="monika()">MONIKA e as chances dos candidatos a dev</button>
+        <output id="resultado03"></output>  
+        <hr>
+
+        <button onclick="guilhermeportões()">GUILHERME PORTÕES e a força de trabalho da Macrohard</button>
+        <output id="resultado02"></output>  
+        <hr>
+
+        <button onclick="verificarProvisoes()">controle de tripulação e provisões do CAPITÃO GANSO</button>
+        <output id="resultado01"></output>  
+        <hr>
+
+        <button onclick="juninSalarioDiario()">JUNIN e o salário diário</button>
+        <output id="resultado05"></output>  
+        <hr>
+
+        <button onclick="peba()">PEBA e o campeonato de futebol</button>
+        <output id="resultado06"></output>  
+        <hr>
+
+        <button onclick="peErnanBuco()">PE. ERNAN BUCO e os custos da Igreja</button>
+        <output id="resultado07"></output>  
+        <hr>
+
+        <button onclick="tellesTransportesPeso()">TELLES TRANSPORTES e o peso dos fretes</button>
+        <output id="resultado08"></output>  
+        <hr>
+
+        <button onclick="trajetoPomar()">TRAJETO POMAR e o estoque de frutas</button>
+        <output id="resultado10"></output>
+        <hr>
+
+        <button onclick="pePequeno()">PÉ PEQUENO e o prejuízo das trocas</button>
+        <output id="resultado11"></output>
+        <hr> <hr> <hr>
+    </div> <!-- FIM DO GRUPO 1 -->
+
+    <!-- Adicionamos o onclick para o segundo botão branco -->
+    <button class="btn-invertido" onclick="alternarVisibilidade('grupo2')">{#0027} Desbravando o mundo das decisões {[if, else, JS, &&, ||, Operadores relacionais]}</button>
+    <hr> <hr> <hr>
+
+    <!-- INÍCIO DO GRUPO 2: Agrupamos os botões da segunda seção -->
+    <div id="grupo2" class="conteudo-oculto">
+        <button onclick="verificarIdade()">SideQuests ⭐01 Verificando a Idade</button>
+        <output id="resultado09"></output>
+        <hr>
+
+        <button onclick="adivinharNumero()">SideQuests ⭐02 Jogo de Adivinhação</button>
+        <!-- Faltava a tag de output para o resultado do jogo, adicionei uma aqui com id 'resposta' para o seu JS funcionar -->
+        <output id="resposta"></output> 
+    </div> <!-- FIM DO GRUPO 2 -->
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-

@@ -61,3 +61,28 @@ button:hover {
 button:active {
   transform: translateY(0);
 }
+
+.login-box{
+    background-color: #ffccd5;
+
+    width: 450px;
+    margin: 120px auto;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(89,13,34,0.1);
+}
+
+.login-box h1{
+    color:#a4133c;
+    margin-bottom: 10px;
+}
+
+.login-box h2{
+    margin-bottom: 30px;
+    font-weight: normal;
+}
