@@ -1,13 +1,124 @@
-/* ... [Mantenha todo o seu CSS anterior acima] ... */
+body{
+    background-color: #ffb3c1;
+    color: #c9184a;
 
-/* --- Classes para esconder e mostrar os botões --- */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 
-/* Esta classe esconde a div inteira por padrão usando display: none */
+    margin: 0;
+    padding: 40px;
+
+    max-width: 1200px;
+
+    margin-inline: auto;
+}
+
+/* títulos */
+h1, h2, h3{
+    color: #a4133c;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* textos */
+p{
+    margin-bottom: 16px;
+}
+
+/* botões */
+button{
+    background-color: #a4133c;
+    color: #fff0f3;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    margin: 5px;
+}
+
+/* interação */
+button:hover{
+    background-color: #800f2f;
+    transform: translateY(-2px);
+}
+
+/* inputs */
+input, textarea{
+    width: 100%;
+    padding: 12px;
+
+    border: 2px solid #ff8fa3;
+    border-radius: 8px;
+
+    background-color: #fff0f3;
+    color: #590d22;
+
+    margin-bottom: 16px;
+}
+
+/* cartões/seções */
+section, .card{
+    background-color: #ffccd5;
+
+    padding: 24px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(89, 13, 34, 0.08);
+}
+
+.grid-exercicios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card{
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.15);
+}
+
+button{
+    width: 100%;
+}
+
+output{
+    display: block;
+    margin-top: 12px;
+}
+
+/* --- Estilo para os botões invertidos (os brancos) --- */
+button.btn-invertido {
+    background-color: #ffffff; 
+    color: #a4133c;            
+}
+
+button.btn-invertido:hover {
+    background-color: #fff0f3; 
+}
+
+/* ================================================================= */
+/* --- CLASSES NOVAS PARA O EFEITO DE SANFONA (ABRIR/FECHAR) --- */
+/* ================================================================= */
+
+/* Esconde as caixas dos exercícios por padrão */
 .conteudo-oculto {
     display: none; 
 }
 
-/* Quando o JavaScript adicionar essa classe na div, ela passa a aparecer na tela */
+/* O JavaScript vai adicionar essa classe para mostrar os botões */
 .mostrar-conteudo {
     display: block; 
 }
