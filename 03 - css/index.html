@@ -11,11 +11,10 @@
     <h2>js l html l css</h2>
     <hr> <hr><hr>
     
-    <!-- Adicionamos o onclick aqui para chamar a nova função passando o ID do grupo que queremos abrir -->
     <button class="btn-invertido" onclick="alternarVisibilidade('grupo1')">{#0011} Exercicios básicos portugol</button>
     <hr> <hr> <hr>
 
-    <!-- INÍCIO DO GRUPO 1: Agrupamos todos os botões e outputs desta seção dentro de uma div -->
+    <!-- GRUPO 1: Agrupamento de todos os botões e outputs desta seção dentro de uma div -->
     <div id="grupo1" class="conteudo-oculto">
         <button onclick="romeroBrique()">ROMERO BRIQUE e a política de preços</button>
         <output id="resultado04"></output>  
@@ -53,25 +52,32 @@
         <output id="resultado10"></output>
         <hr>
 
+        <button onclick="donaBete()">DONA BETE e seu faturamento</button>
+        <output id="resultado14"></output>
+
         <button onclick="pePequeno()">PÉ PEQUENO e o prejuízo das trocas</button>
         <output id="resultado11"></output>
         <hr> <hr> <hr>
-    </div> <!-- FIM DO GRUPO 1 -->
+    </div> 
 
-    <!-- Adicionamos o onclick para o segundo botão branco -->
     <button class="btn-invertido" onclick="alternarVisibilidade('grupo2')">{#0027} Desbravando o mundo das decisões {[if, else, JS, &&, ||, Operadores relacionais]}</button>
     <hr> <hr> <hr>
 
-    <!-- INÍCIO DO GRUPO 2: Agrupamos os botões da segunda seção -->
     <div id="grupo2" class="conteudo-oculto">
         <button onclick="verificarIdade()">SideQuests ⭐01 Verificando a Idade</button>
         <output id="resultado09"></output>
         <hr>
 
         <button onclick="adivinharNumero()">SideQuests ⭐02 Jogo de Adivinhação</button>
-        <!-- Faltava a tag de output para o resultado do jogo, adicionei uma aqui com id 'resposta' para o seu JS funcionar -->
-        <output id="resposta"></output> 
-    </div> <!-- FIM DO GRUPO 2 -->
+        <output id="resultado12"></output> 
+
+        <button onclick="diadasemana()">SideQuests ⭐03 Dia da Semana</button>
+    <output id = "resultado13"></output>
+
+    </div> 
+
+    
+
 
     <script src="script.js"></script>
 </body>

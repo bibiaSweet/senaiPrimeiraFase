@@ -137,7 +137,7 @@ function adivinharNumero(){
     let chute = Number(prompt("Chuta aí (entre 1 e 3):"))
     
     // Agora vai funcionar direitinho porque adicionei o id="resposta" lá no HTML
-    let resposta = document.getElementById("resposta");
+    let resposta = document.getElementById("resultado12");
     
     if(chute == numero){
         resposta.innerHTML = "Acertou!"
@@ -146,7 +146,38 @@ function adivinharNumero(){
     }
 }
 
+// ======================================================================= // 
 
+function diadasemana () {
+let numero, dia
+numero = Number (prompt ("Digite o número:"))
+if (numero == 1 ) {
+    dia = "Domingo"
+} else if (numero==2) {
+    dia = "Segunda"
+} else if (numero==3) {
+    dia = "Terça"
+}else if (numero==4) {
+    dia = "Quarta"
+} else if (numero==5) {
+    dia = "Quinta"
+} else if (numero==6) {
+    dia = "Sexta"
+} else if (numero==7)
+    dia = "Sábado"
+document.getElementById ("resultado13").innerHTML = dia
 
+}
 
+// ======================================================================= // 
 
+function donaBete () {
+let brutoTotal, premiacoes, presentes, comissoes, lucro
+brutoTotal = Number(prompt("Digite o valor bruto total:"))
+premiacoes = Number(prompt("Digite o valor gasto com as premiações:"))
+presentes = Number(prompt ("Digite o valor gasto com os presentes:"))
+comissoes = Number(prompt("Digite o valor gasto com as comisoes:"))
+lucro = brutoTotal - premiacoes - presentes - comissoes
+document.getElementById("resultado14").innerHTML =("R$") + lucro .toFixed (2)
+
+}
