@@ -181,3 +181,33 @@ lucro = brutoTotal - premiacoes - presentes - comissoes
 document.getElementById("resultado14").innerHTML =("R$") + lucro .toFixed (2)
 
 }
+
+// ======================================================================= // 
+
+
+function verificarMeta() {
+    let totalBruto = Number(prompt("Total Bruto:"))
+    let premiacoes = Number(prompt("Premiações:"))
+    let presentes = Number(prompt("Presentes:"))
+    let comissoes = Number(prompt("Comissões:"))
+    let meta = Number(prompt("Meta de hoje:"))
+
+  
+    let lucro = totalBruto - (premiacoes + presentes + comissoes)
+    let mensagem
+
+    if (lucro >= meta) {
+        mensagem = "Batemos a meta! Lucro de R$: " + lucro.toFixed(2)
+    } else if (lucro > 0) {
+        mensagem = "Não batemos a meta, mas tivemos lucro de: R$ " + lucro.toFixed(2)
+    } else if (lucro < 0) {
+        mensagem = "Tivemos prejuízo de: R$ " + Math.abs(lucro).toFixed(2)
+    } else {
+        mensagem = "Ficamos no zero a zero."
+    }
+
+    const elementoResultado = document.getElementById("resultado15")
+    if (elementoResultado) {
+        elementoResultado.innerHTML = mensagem
+    }
+}

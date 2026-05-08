@@ -16,7 +16,7 @@ body{
 
 /* títulos */
 h1, h2, h3{
-    color: #a4133c;
+    color: #ffffff;
     font-weight: 600;
     margin-bottom: 16px;
 }
@@ -121,4 +121,26 @@ button.btn-invertido:hover {
 /* O JavaScript vai adicionar essa classe para mostrar os botões */
 .mostrar-conteudo {
     display: block; 
+}
+
+body {
+    /* As cores de fundo servem de backup caso a imagem demore a carregar */
+    background-color: #ffb3c1;
+    
+    /* AQUI VOCÊ COLOCA O NOME DA IMAGEM QUE VOCÊ BAIXOU */
+    background-image: url('chat.gpt.png'); 
+    
+    /* Esses 3 fazem a mágica de deixar a imagem bonita na tela toda */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #c9184a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px;
+    max-width: 1200px;
+    margin-inline: auto;
 }

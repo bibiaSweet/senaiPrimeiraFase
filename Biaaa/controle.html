@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinancePro - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-wallet"></i>
+            <span>FinancePro</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fa-solid fa-calendar-days"></i> Meus Meses</a></li>
+            <li class="active"><a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p id="label-mes-sidebar">Selecionado: Janeiro</p>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <h1 id="titulo-mes">Controle de Janeiro</h1>
+            <div class="user-profile">
+                <span>Bem-vindo(a)</span>
+                <div class="avatar"></div>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card income">
+                <div class="stat-icon"><i class="fa-solid fa-arrow-up"></i></div>
+                <div class="stat-info">
+                    <h3>Receitas</h3>
+                    <p id="receitas">R$ 0,00</p>
+                </div>
+            </div>
+            <div class="stat-card expense">
+                <div class="stat-icon"><i class="fa-solid fa-arrow-down"></i></div>
+                <div class="stat-info">
+                    <h3>Despesas</h3>
+                    <p id="despesas">R$ 0,00</p>
+                </div>
+            </div>
+            <div class="stat-card balance">
+                <div class="stat-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="stat-info">
+                    <h3>Saldo Total</h3>
+                    <p id="saldo">R$ 0,00</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <section class="form-container">
+                <h2>Nova Transação</h2>
+                <form id="formulario">
+                    <div class="input-group">
+                        <label>Descrição</label>
+                        <input type="text" id="descricao" placeholder="Ex: Salário" required>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Valor</label>
+                            <input type="number" id="valor" step="0.01" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Categoria</label>
+                            <select id="tipo">
+                                <option value="receita">Receita</option>
+                                <option value="despesa">Despesa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-add">Adicionar Lançamento</button>
+                </form>
+            </section>
+
+            <section class="list-container">
+                <h2>Histórico Detalhado</h2>
+                <div class="table-scroll">
+                    <ul id="lista-transacoes"></ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

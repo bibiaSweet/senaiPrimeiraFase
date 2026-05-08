@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceHub | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Header com Design de Boas-vindas -->
+        <header class="home-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-area">
+                        <i class="fa-solid fa-chart-line-up"></i>
+                        <h1>Finance<strong>Hub</strong></h1>
+                    </div>
+                    <div class="welcome-text">
+                        <h2>Olá, Beatriz!</h2>
+                        <p>Pronta para organizar suas finanças hoje?</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="section-title">
+                <i class="fa-solid fa-calendar-days"></i>
+                <h3>Selecione o mês de referência</h3>
+            </div>
+
+            <!-- Grade de Meses Estilizada -->
+            <div class="month-grid" id="monthGrid">
+                <!-- Gerado pelo JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const meses = [
+            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+        
+        const grid = document.getElementById('monthGrid');
+        
+        meses.forEach((mes, index) => {
+            const card = document.createElement('a');
+            card.href = `controle.html?mes=${mes}`;
+            card.className = 'month-card-modern';
+            
+            // Lógica para destacar o mês atual (opcional)
+            const mesAtualIndex = new Date().getMonth();
+            const isCurrentMonth = index === mesAtualIndex;
+
+            card.innerHTML = `
+                <div class="card-content">
+                    <span class="month-number">${(index + 1).toString().padStart(2, '0')}</span>
+                    <span class="month-name">${mes}</span>
+                </div>
+                <div class="card-footer">
+                    <span>Acessar painel</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                ${isCurrentMonth ? '<span class="badge">Mês Atual</span>' : ''}
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>

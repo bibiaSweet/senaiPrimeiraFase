@@ -1,118 +1,58 @@
-function monika (){
+const parametrosUrl = new URLSearchParams(window.location.search);
+const mesAtual = parametrosUrl.get('mes') || 'Janeiro';
+const chaveStorage = `transacoes_${mesAtual}`;
 
-let n, chance
+document.getElementById('titulo-mes').innerText = `Controle de ${mesAtual}`;
+document.getElementById('label-mes-sidebar').innerText = `Mês: ${mesAtual}`;
 
-n = Number (prompt("Digite o número de vezes (n):"));
+let transacoes = JSON.parse(localStorage.getItem(chaveStorage)) || [];
 
-chance = (0.1 / (1 + 500 * n)) * 100
+const formatarMoeda = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-// console.log ("Chance de aprovação: " + chance.toFixed(2) + "%")
-document.getElementById("resultado03").innerHTML = "Chance de aprovação: " + chance.toFixed(4) + "%"
+function atualizarUI() {
+    const lista = document.getElementById('lista-transacoes');
+    lista.innerHTML = '';
+
+    let totalInc = 0, totalExp = 0;
+
+    transacoes.forEach(t => {
+        if(t.tipo === 'receita') totalInc += t.valor;
+        else totalExp += t.valor;
+
+        const li = document.createElement('li');
+        li.className = t.tipo === 'receita' ? 'receita-item' : 'despesa-item';
+        li.innerHTML = `
+            <div>
+                <strong>${t.descricao}</strong><br>
+                <small>${new Date().toLocaleDateString()}</small>
+            </div>
+            <span>${formatarMoeda(t.valor)}</span>
+            <button class="btn-remove" onclick="remover(${t.id})"><i class="fa-solid fa-trash-can"></i></button>
+        `;
+        lista.appendChild(li);
+    });
+
+    document.getElementById('receitas').innerText = formatarMoeda(totalInc);
+    document.getElementById('despesas').innerText = formatarMoeda(totalExp);
+    document.getElementById('saldo').innerText = formatarMoeda(totalInc - totalExp);
+    
+    localStorage.setItem(chaveStorage, JSON.stringify(transacoes));
 }
 
+document.getElementById('formulario').addEventListener('submit', e => {
+    e.preventDefault();
+    const desc = document.getElementById('descricao').value;
+    const val = parseFloat(document.getElementById('valor').value);
+    const tipo = document.getElementById('tipo').value;
 
-// ======================================================================= // 
+    transacoes.push({ id: Date.now(), descricao: desc, valor: val, tipo: tipo });
+    atualizarUI();
+    e.target.reset();
+});
 
-
-
-function romeroBrique(){
-// infos
-let valorCompra, valorVenda
-
-//leituras
-valorCompra = Number (prompt ("Digite o valor pago pela obra:"))
-
-//processamentos
-valorVenda = valorCompra * 3 
-
-//saidas
-console.log ("O preço de venda da obra deve ser: R$ " + valorVenda .toFixed(2))
-alert ("O preço de venda da obra deve ser: R$ " + valorVenda .toFixed(2))
-
-
-document.getElementById("resultado04").innerHTML = "O preço de venda da obra deve ser: R$ " + valorVenda .toFixed(2)
-
+function remover(id) {
+    transacoes = transacoes.filter(t => t.id !== id);
+    atualizarUI();
 }
-// ======================================================================= // 
 
-
-function guilhermeportões () {
-
-let clt, estagiario, pj, total
-
-clt = Number (prompt ("Número de CLT:"))
-estagiario = Number (prompt ("Número de estagiários:"))
-pj = Number (prompt ("Número de PJ:"))
-
-total = clt + estagiario + pj
-alert ("Número total de Devs: " + total)
-document.getElementById ("resultado02").innerHTML = "Número total de Devs: " + total }
-
-// ======================================================================= // 
-
-function verificarProvisoes () {
-    let marujos, comida
-    let comidaPorMarujo
-
-    marujos = Number (prompt ("Quantidade de marujos:"))
-    comida = Number (prompt ("Quilos de comida:"))
-
-    comidaPorMarujo = comida / marujos
-
-    if (marujos >= 10 && comidaPorMarujo >= 1.5) { // ou = ||
-        alert ("Provisões suficientes. Rumo ao horizonte!")
-        document.getElementById ("resultado01").innerHTML = "Provisões suficientes. Rumo ao horizonte!"
-
-
-    }else {
-        document.getElementById ("resultado01").innerHTML = "Algo está errado. Posseidom não quer ninguém no mar hoje."
-    } }
-
-    // ======================================================================= // 
-
-function juninSalarioDiario () {
-
-    let salario, dias, salarioDiario 
-salario = Number (prompt ("Digite seu salário: "))
-dias = Number (prompt ("Digite quantos dias trabalhou no mês:"))
-salarioDiario = salario / dias
-document.getElementById ("resultado05").innerHTML = "Junin recebe por dia: " + salarioDiario.toFixed(2)
-
-    // ======================================================================= // 
-
-function peba
-
-    let vitorias, empates, pontos
-vitorias = Number (prompt ("Digite o número de vitórias: "))
-empates = Number (prompt ("Digite o número de empates: "))
-pontos = (vitorias * 3) + empates
-document.getElementById ("resultado06").innerHTML = "Quantidade de pontos: " +
-
-    // ======================================================================= // 
-
-    function peErnanBuco  () {
-
-let  custos, doacao, dizimo, divida
- 
-custos = Number (prompt ("Digite os custos:"))
-doacao = Number (prompt("Digite as doações:"))
-dizimo = Number (prompt ("Digite o valor do dízimo:"))
-
-divida = custos - doacao - dizimo
-
-document.getElementById ("resultado07").innerHTML ="O valor da divída será de: R$" + divida.toFixed (2)}
-
-    // ======================================================================= // 
-
-    function tellesTransportesPeso () {
-
-    let pesoBrutoTotal, tara, pesoDaCarga
-
-pesoBrutoTotal = Number (prompt ("Digite o peso bruto total:"))
-tara = Number (prompt ("Digite a tara: "))
-
-pesoDaCarga = pesoBrutoTotal - tara
-
-document.getElementById ("resultado08").innerHTML = "O peso da carga é de: " + pesoDaCarga }
-
-    // ======================================================================= // 
+atualizarUI();

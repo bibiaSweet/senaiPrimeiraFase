@@ -1,88 +1,164 @@
-Com certeza! Sua paleta de cores é excelente (tons de rosa e vinho são ótimos para um visual chic ou moderno), mas o que impede o código de parecer "profissional" são detalhes de espaçamento, tipografia e interatividade.
-
-Para um look profissional, precisamos focar em legibilidade, espaçamento consistente (respiro) e feedback visual (efeitos de hover).
-
-Aqui está a versão refinada:
-
-CSS
 :root {
-  /* Organizar as cores em variáveis facilita a manutenção */
-  --bg-color: #ffccd5;
-  --main-accent: #c9184a;
-  --button-bg: #a4133c;
-  --button-hover: #800f2f;
-  --text-light: #fff0f3;
+    --wine: #800f2f;
+    --wine-light: #a4133c;
+    --pink: #ffb3c1;
+    --pink-soft: #fff0f3;
+    --text-main: #2d3436;
+    --white: #ffffff;
+    --shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--main-accent);
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  
-  /* 'small' costuma ser difícil de ler. 16px é o padrão profissional. */
-  font-size: 16px; 
-  line-height: 1.6;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { background: #f8f9fa; color: var(--text-main); }
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: var(--wine);
+    color: white;
+    position: fixed;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
-button {
-  background-color: var(--button-bg);
-  color: var(--text-light);
-  
-  /* Padding assimétrico (lados maiores que o topo) é mais elegante */
-  padding: 12px 24px; 
-  
-  /* Bordas levemente arredondadas são mais modernas que 0 ou total */
-  border-radius: 6px; 
-  border: none;
-  margin: 10px;
-  
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  
-  /* Transição suave para o efeito de hover */
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.sidebar-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 3rem;
 }
 
-/* O toque profissional: feedback quando o usuário passa o mouse */
-button:hover {
-  background-color: var(--button-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.sidebar-menu { list-style: none; flex-grow: 1; }
+.sidebar-menu li { margin-bottom: 1rem; }
+.sidebar-menu a {
+    color: var(--pink);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-button:active {
-  transform: translateY(0);
+.sidebar-menu li.active a, .sidebar-menu a:hover {
+    background: var(--wine-light);
+    color: white;
 }
 
-.login-box{
-    background-color: #ffccd5;
+/* Main Content */
+.main-content { margin-left: 260px; padding: 2rem; }
 
-    width: 450px;
-    margin: 120px auto;
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
 
-    padding: 40px;
+/* Stats Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
 
+.stat-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
-
-    text-align: center;
-
-    box-shadow: 0 4px 12px rgba(89,13,34,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
 }
 
-.login-box h1{
-    color:#a4133c;
-    margin-bottom: 10px;
+.income .stat-icon { background: #d4edda; color: #155724; }
+.expense .stat-icon { background: var(--pink-soft); color: var(--wine); }
+.balance .stat-icon { background: #e3f2fd; color: #0d47a1; }
+
+.stat-info h3 { font-size: 0.9rem; color: #636e72; font-weight: 400; }
+.stat-info p { font-size: 1.4rem; font-weight: 600; color: var(--wine); }
+
+/* Forms and Lists */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
 }
 
-.login-box h2{
-    margin-bottom: 30px;
-    font-weight: normal;
+.form-container, .list-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+h2 { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--wine); border-bottom: 2px solid var(--pink-soft); padding-bottom: 0.5rem; }
+
+.input-group { display: flex; flex-direction: column; margin-bottom: 1.2rem; }
+.input-group label { font-size: 0.85rem; margin-bottom: 0.5rem; color: #636e72; }
+input, select {
+    padding: 0.8rem;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus { border-color: var(--wine); }
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.btn-add {
+    width: 100%;
+    padding: 1rem;
+    background: var(--wine);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add:hover { background: var(--wine-light); transform: translateY(-2px); }
+
+/* Transações List */
+#lista-transacoes li {
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    background: #fdfdfd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #f1f2f6;
+}
+
+.receita-item { border-left: 5px solid #2ecc71 !important; }
+.despesa-item { border-left: 5px solid var(--wine) !important; }
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #ff7675;
+    cursor: pointer;
+    font-size: 1.1rem;
 }
