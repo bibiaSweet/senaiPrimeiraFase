@@ -13,7 +13,6 @@
     <button class="btn-invertido" onclick="alternarVisibilidade('grupo1')">{#0011} Exercicios básicos portugol</button>
     <hr> <hr> <hr>
 
-    <!-- GRUPO 1: Agrupamento de todos os botões e outputs desta seção dentro de uma div -->
     <div id="grupo1" class="conteudo-oculto">
         <button onclick="romeroBrique()">ROMERO BRIQUE e a política de preços</button>
         <output id="resultado04"></output>  
@@ -76,12 +75,21 @@
         <button onclick="adivinharNumero()">SideQuests ⭐02 Jogo de Adivinhação</button>
         <output id="resultado12"></output> 
 
+        
         <button onclick="diadasemana()">SideQuests ⭐03 Dia da Semana</button>
-    <output id = "resultado13"></output>
+        <output id="resultado13"></output>
+        
+    </div> 
 
-    
-    
+    <button class="btn-invertido" onclick="alternarVisibilidade('grupo3')">{#0046} StarUbers</button>
+    <hr> <hr> <hr>
 
+    <div id="grupo3" class="conteudo-oculto">
+        <button onclick="calcularUber()">StarUbers</button>
+        <output id="resultado16"></output>
+        
+        
+    </div>
 
     <script src="script.js"></script>
 </body>

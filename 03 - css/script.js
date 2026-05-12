@@ -1,6 +1,7 @@
 // ======================================================================= //
 // NOVA FUNÇÃO: Faz o efeito de abrir/fechar as seções
 // ======================================================================= //
+
 function alternarVisibilidade(idDoGrupo) {
     // Busca a nossa <div> no HTML através do ID ('grupo1' ou 'grupo2')
     let grupo = document.getElementById(idDoGrupo);
@@ -210,4 +211,34 @@ function verificarMeta() {
     if (elementoResultado) {
         elementoResultado.innerHTML = mensagem
     }
+}
+
+// ======================================================================= // 
+
+
+function calcularUber() {
+    let distancia, tempoSegundos
+    let velocidadeDaLuz = 300000
+    let elementoResultado = document.getElementById("resultado16")
+    
+
+
+    distancia = Number(prompt("Qual a distância da corrida?")) 
+    
+    tempoSegundos = distancia / velocidadeDaLuz
+
+     elementoResultado.innerHTML = "Tempo: " + tempoSegundos + " segundo(s)"
+
+    if (tempoSegundos >60) {
+        tempoMinutos = tempoSegundos / 60
+        elementoResultado.innerHTML += "<br>Ou" + tempoMinutos + "minuto(s)"
+    }
+    if (tempoMinutos >60) {
+    tempoHoras = tempoMinutos / 60 
+    elementoResultado.innerHTML += "<br>" + tempoHoras + "hora(s)"
+    }
+    if (tempoHoras > 24){
+        tempoDias = tempoHoras / 24
+    }
+
 }
