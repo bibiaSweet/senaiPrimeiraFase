@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Dados da Dona Bete</title>
+</head>
+<body>
+    <h1 style="color: #ef4444; text-shadow: 0 0 15px rgba(239, 68, 68, 0.4);">🎲 Lançador da Dona Bete</h1>
+    <p>Role os dados para o seu RPG (ou apostas suspeitas).</p>
+    <hr>
+
+    <div style="background-color: #1e293b; padding: 25px; border-radius: 12px;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <span style="color: #34d399; font-weight: bold; font-size: 1.5rem;">
+                Total das rolagens: <span id="totalDadosText">0</span>
+            </span>
+            <button onclick="resetarDados()" style="background-color: #64748b; border-color: #475569;">Reset</button>
+        </div>
+        
+        <p style="color: #38bdf8; font-size: 1.2rem; margin-bottom: 25px;">Último dado tirou: <span id="ultimoDadoText" style="font-weight: bold; font-size: 1.5rem;">-</span></p>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+            <button onclick="rolarDado(2)">D2 (Moeda)</button>
+            <button onclick="rolarDado(4)">D4</button>
+            <button onclick="rolarDado(6)">D6</button>
+            <button onclick="rolarDado(10)">D10</button>
+            <button onclick="rolarDado(12)">D12</button>
+            <button onclick="rolarDado(20)" style="background-color: #f59e0b; color: black; border-color: #d97706;">D20 (Crítico!)</button>
+        </div>
+    </div>
+
+    <br>
+    <a href="index.html"><button style="background-color: #475569;">Voltar para a Home</button></a>
+
+    <script src="dados.js"></script>
+</body>
+</html>

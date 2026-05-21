@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo do Dino</title>
+</head>
+<body>
+    <h1 style="color: #4ade80; text-shadow: 0 0 15px rgba(74, 222, 128, 0.4);">
+        Jogo do Dino! 🦕🦖 
+        <button onclick="verificarCaixaBete()" style="padding: 2px 5px; font-size: 10px; background: transparent; border: none;">🕵️‍♀️</button>
+    </h1>
+    
+    <div style="background-color: #1e293b; padding: 20px; border-radius: 10px;">
+        <label>Valor da aposta: R$ </label>
+        <input type="number" id="valorApostaDino" style="width: 150px;">
+        <br><br>
+        
+        <p>Escolha seu Dino:</p>
+        <select id="dinoEscolhido" style="padding: 10px; background: #030712; color: #38bdf8; border: 1px solid #38bdf8; border-radius: 5px;">
+            <option value="Espinossauro">Espinossauro</option>
+            <option value="T-Rex">T-Rex</option>
+            <option value="Braquiossauro">Braquiossauro</option>
+            <option value="Velocirraptor">Velocirraptor</option>
+            <option value="Estegossauro">Estegossauro</option>
+            <option value="Triceratopo">Triceratopo</option>
+            <option value="Anquilossauro">Anquilossauro</option>
+            <option value="Parassaurolofo">Parassaurolofo</option>
+            <option value="Alossauro">Alossauro</option>
+            <option value="Carnotauro">Carnotauro</option>
+        </select>
+        
+        <button onclick="escolherDinoAleatorio()">Sorte de Principiante (Aleatório)</button>
+        <button onclick="jogarDino()" style="background-color: #4ade80; color: #000;">APOSTAR!</button>
+
+        <hr>
+        <h2 style="color: #4ade80;">!! RESULTADO !!</h2>
+        <p>Seu dino: <span id="txtSeuDino">-</span></p>
+        <p>Dino sorteado: <span id="txtDinoSorteado">-</span></p>
+        <h3 id="resultadoDino"></h3>
+        
+        <button id="btnChance50x" onclick="chance50x()" style="display: none; background-color: #f59e0b; color: black;">CHANCE ÚNICA: 50x!!</button>
+    </div>
+    
+    <a href="index.html"><button>Voltar para a Home</button></a>
+    
+    <script src="dino.js"></script>
+</body>
+</html>

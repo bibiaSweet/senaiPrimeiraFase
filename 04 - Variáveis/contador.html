@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Bilu e os Livros</title>
+</head>
+<body>
+    <h1 style="color: #c084fc; text-shadow: 0 0 15px rgba(192, 132, 252, 0.4);">📚 Bilu e as páginas dos livros</h1>
+    <p>Controle de leitura do Bilu:</p>
+    <hr>
+
+    <img src="biluLendo.png" alt="Imagem do Bilu" style="max-width: 250px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+
+    <div style="background-color: #1e293b; padding: 30px; border-radius: 12px;">
+        <p id="p-contagem" style="font-size: 5rem; margin: 20px 0; color: #c084fc;">0</p>
+        
+        <button onclick="incrementarContagem()">+1 Página</button>
+        <button onclick="somar2()">+2 Páginas</button>
+        <button onclick="somar10()">+10 Páginas</button>
+        <button onclick="decrementarContagem()" style="background-color: #ef4444; border-color: #b91c1c;">-1 Página</button>
+        <br><br>
+        <button onclick="zerarContagem()" style="background-color: #64748b; border-color: #475569;">Zerar Leitura</button>
+    </div>
+
+    <br>
+    <a href="index.html"><button style="background-color: #475569;">Voltar para a Home</button></a>
+    
+    <script src="contador.js"></script>
+</body>
+</html>

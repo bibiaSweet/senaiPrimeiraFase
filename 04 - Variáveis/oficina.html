@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Desamassandro</title>
+</head>
+<body>
+    <h1 style="color: #fcd34d; text-shadow: 0 0 15px rgba(252, 211, 77, 0.4);">Oficina Desamassandro 🚗🔨</h1>
+    
+    <div style="background-color: #1e293b; padding: 20px; border-radius: 10px; text-align: left;">
+        <label>Valor do Orçamento: R$ </label>
+        <input type="number" id="valorServico">
+        <br>
+        
+        <input type="checkbox" id="checkSeguradora">
+        <label for="checkSeguradora">É serviço de Seguradora? (30% desconto)</label>
+        <br>
+
+        <input type="checkbox" id="checkCelso">
+        <label for="checkCelso">Indicação do Seu Celso? (10% comissão)</label>
+        <br><br>
+
+        <button onclick="registrarServico()">Registrar Pagamento</button>
+    </div>
+
+    <hr>
+    <h2>Painel Financeiro</h2>
+    <p>Total Clientes Atendidos: <span id="txtNumClientes">0</span></p>
+    <p style="color: #94a3b8;">Total Arrecadado (Bruto): R$ <span id="txtBruto">0.00</span></p>
+    <p style="color: #ef4444;">Repasse Seu Celso: R$ <span id="txtRepasse">0.00</span></p>
+    <p style="color: #38bdf8;">Total Seguradoras: R$ <span id="txtSeguradora">0.00</span></p>
+    <p style="color: #34d399; font-size: 1.5em; font-weight: bold;">No Bolso do Sandro: R$ <span id="txtSandro">0.00</span></p>
+
+    <a href="index.html"><button>Voltar para a Home</button></a>
+
+    <script src="oficina.js"></script>
+</body>
+</html>

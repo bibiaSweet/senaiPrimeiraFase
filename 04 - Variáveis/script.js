@@ -1,5 +1,6 @@
-
-
+// ==========================================
+// Vendas
+// ==========================================
 let total = 0
 function registrarVenda(){
     let valor = Number(document.getElementById('inputVenda').value)
@@ -15,25 +16,22 @@ function registrarVenda(){
     document.getElementById('inputVenda').value = ''
     document.getElementById('inputVenda').focus()
 
-
     console.log(valor)
 }
+
 document.getElementById('inputVenda').addEventListener('keyup', tratarTecla)
 function tratarTecla(e){
     console.log(e);
     if(e.key == 'Enter'){
-        // console.log('boa');
         registrarVenda()
     }
-    
 }
 
-
-
+// ==========================================
+// Contagem
+// ==========================================
 let cont = 0
 function incrementarContagem(){
-    // cont = cont + 1
-    // cont += 1
     cont++
     document.getElementById('p-contagem').innerHTML = cont
 }
@@ -44,7 +42,6 @@ function decrementarContagem(){
 }
 function somar10(){
     cont = cont + 10
-    // cont += 10
     document.getElementById('p-contagem').innerHTML = cont
 }
 function somar2(){
@@ -56,24 +53,35 @@ function zerarContagem(){
     document.getElementById('p-contagem').innerHTML = cont
 }
 
-
-
-
-
-
-
+// ==========================================
+// Variáveis Globais/Locais
+// ==========================================
 let global = 'Eu sou uma variável global :/'
 function funcao1(){
     let local = 'Sou uma variável local :D'
-    // let global = 'ME identifico como global'
     console.log(local);
     console.log(global);
 }
 function funcao2(){
-    // let local
     console.log(global);
-    // console.log(local);
 }
 
-// funcao1()
-// funcao2()
+// ==========================================
+// Lançador de Dados da Dona Bete
+// ==========================================
+let totalRolagens = 0;
+
+function rolarDado(lados) {
+    let resultado = Math.floor(Math.random() * lados) + 1;
+    totalRolagens += resultado; 
+    
+    document.getElementById('totalDadosText').innerText = totalRolagens;
+    document.getElementById('ultimoDadoText').innerText = resultado;
+}
+
+function resetarDados() {
+    totalRolagens = 0; 
+    
+    document.getElementById('totalDadosText').innerText = totalRolagens;
+    document.getElementById('ultimoDadoText').innerText = '-';
+}

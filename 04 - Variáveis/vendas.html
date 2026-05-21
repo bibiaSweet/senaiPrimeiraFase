@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Harry Ploter</title>
+</head>
+<body>
+    <h1 style="color: #fcd34d; text-shadow: 0 0 15px rgba(252, 211, 77, 0.4);">🧙‍♂️ Mano Juca na Harry Ploter</h1>
+    <p>Totalizador de vendas da loja mágica.</p>
+    <hr>
+
+    <div style="background-color: #1e293b; padding: 20px; border-radius: 12px;">
+        <p id="totalVendido">Total de vendas: R$0.00</p>
+        
+        <label>Valor da venda: R$ </label>
+        <input id="inputVenda" type="number" step="0.01" style="width: 150px; background-color: #0f172a; color: white; padding: 10px; border-radius: 5px; border: 1px solid #38bdf8;">
+        <button onclick="registrarVenda()">Cadastrar Feitiço</button>
+        
+        <div id="listaVendas" style="margin-top: 20px; text-align: left; background: #0f172a; padding: 10px; border-radius: 8px; min-height: 50px;">
+            </div>
+    </div>
+
+    <br>
+    <a href="index.html"><button style="background-color: #475569;">Voltar para a Home</button></a>
+    
+    <script src="vendas.js"></script>
+</body>
+</html>
