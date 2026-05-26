@@ -216,6 +216,7 @@ function verificarMeta() {
 // ======================================================================= // 
 
 
+
 function calcularUber() {
     let distancia, tempoSegundos
     let velocidadeDaLuz = 300000
