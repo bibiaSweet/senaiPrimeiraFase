@@ -14,6 +14,7 @@ if (peso>1.1 || peso < 0.9){
 let contador = 0 
 while (contador < 10){
     //trampo
+    
     contador++
 }
 

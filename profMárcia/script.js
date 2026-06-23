@@ -29,7 +29,7 @@
 // }
 
 
-// Função auxiliar para mostrar o texto na tela
+,
 function mostrarResultado(texto) {
     document.getElementById("resultado").innerText = texto;
 }
@@ -48,7 +48,7 @@ function exercicio2() {
         resultado += `5 x ${i} = ${5 * i}\n`;
     }
     mostrarResultado(resultado);
-}
+}    
 
 function exercicio3() {
     let resultado = "Quadrado dos números de 1 a 10:\n";
@@ -67,7 +67,7 @@ function exercicio4() {
     mostrarResultado(resultado);
 }
 
-function exercicio5() {
+function exercicio5() {  
     let resultado = "Múltiplos de 3 entre 1 e 30:\n";
     for (let i = 3; i <= 30; i += 3) {
         resultado += i + "\n";
