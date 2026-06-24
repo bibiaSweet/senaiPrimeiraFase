@@ -29,7 +29,7 @@
 // }
 
 
-,
+
 function mostrarResultado(texto) {
     document.getElementById("resultado").innerText = texto;
 }
@@ -144,4 +144,29 @@ function exercicio14() {
         }
     }
     mostrarResultado(`A palavra "${textoTeste}" tem ${contadorDeO} letras 'o'.`);
+}
+
+function gerarRelatorioSprint() {
+    let totalConcluidas = 0;
+    let totalIncompletas = 0;
+    let relatorioTexto = "";
+
+    let diasSprint = Number(prompt("Quantos dias possui a Sprint?"));
+
+    for (let i = 1; i <= diasSprint; i++) {
+        
+        let concluidasDia = Number(prompt("Dia " + i + ": Quantas tarefas foram concluídas?"));
+        let incompletasDia = Number(prompt("Dia " + i + ": Quantas tarefas ficaram incompletas?"));
+
+        totalConcluidas += concluidasDia;
+        totalIncompletas += incompletasDia;
+
+        relatorioTexto += "Dia " + i + ": " + concluidasDia + " concluída(s) | " + incompletasDia + " incompleta(s)\n";
+    }
+
+    relatorioTexto += "\nRelatório Final da Sprint\n";
+    relatorioTexto += "Total de tarefas concluídas: " + totalConcluidas + "\n";
+    relatorioTexto += "Total de tarefas incompletas: " + totalIncompletas;
+
+    mostrarResultado(relatorioTexto);
 }
