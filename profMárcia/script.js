@@ -147,26 +147,86 @@ function exercicio14() {
 }
 
 function gerarRelatorioSprint() {
-    let totalConcluidas = 0;
-    let totalIncompletas = 0;
-    let relatorioTexto = "";
+let totalConcluidas = 0;
+let totalIncompletas = 0;
+let relatorioTexto = "";
 
-    let diasSprint = Number(prompt("Quantos dias possui a Sprint?"));
+let diasSprint = Number(prompt("Quantos dias possui a Sprint?"));
 
-    for (let i = 1; i <= diasSprint; i++) {
+for (let i = 1; i <= diasSprint; i++) {
         
-        let concluidasDia = Number(prompt("Dia " + i + ": Quantas tarefas foram concluídas?"));
-        let incompletasDia = Number(prompt("Dia " + i + ": Quantas tarefas ficaram incompletas?"));
+let concluidasDia = Number(prompt("Dia " + i + ": Quantas tarefas foram concluídas?"));
+let incompletasDia = Number(prompt("Dia " + i + ": Quantas tarefas ficaram incompletas?"));
 
-        totalConcluidas += concluidasDia;
-        totalIncompletas += incompletasDia;
+totalConcluidas += concluidasDia;
+totalIncompletas += incompletasDia;
 
-        relatorioTexto += "Dia " + i + ": " + concluidasDia + " concluída(s) | " + incompletasDia + " incompleta(s)\n";
-    }
+relatorioTexto += "Dia " + i + ": " + concluidasDia + " concluída(s) | " + incompletasDia + " incompleta(s)\n";
+}
 
-    relatorioTexto += "\nRelatório Final da Sprint\n";
-    relatorioTexto += "Total de tarefas concluídas: " + totalConcluidas + "\n";
-    relatorioTexto += "Total de tarefas incompletas: " + totalIncompletas;
+ relatorioTexto += "\nRelatório Final da Sprint\n";
+ relatorioTexto += "Total de tarefas concluídas: " + totalConcluidas + "\n";
+ relatorioTexto += "Total de tarefas incompletas: " + totalIncompletas;
 
-    mostrarResultado(relatorioTexto);
+ mostrarResultado(relatorioTexto);
+}
+
+function gerarRelatorioBugs() {
+let diasSprint = Number(prompt("Quantos dias teve a Sprint?"));
+    
+let totalBugs = 0;
+let relatorioTexto = "RELATÓRIO DE BUGS\n";
+    
+let maiorBugs = 0;
+let menorBugs = 0;
+let diaMaisBugs = 0;
+let diaMenosBugs = 0;
+    
+let diasMaisDe10Bugs = 0;
+let diasSemBugs = 0;
+
+for (let i = 1; i <= diasSprint; i++) {
+let bugsDia = Number(prompt("Dia " + i + ": Quantos bugs foram encontrados?"));
+        
+relatorioTexto += "Dia " + i + ": " + bugsDia + " bugs\n";
+totalBugs += bugsDia;
+        
+if (i === 1) {
+maiorBugs = bugsDia;
+menorBugs = bugsDia;
+diaMaisBugs = i;
+diaMenosBugs = i;
+} else {
+if (bugsDia > maiorBugs) {
+maiorBugs = bugsDia;
+diaMaisBugs = i;
+}
+if (bugsDia < menorBugs) {
+menorBugs = bugsDia;
+diaMenosBugs = i;
+}
+}
+        
+if (bugsDia > 10) {
+diasMaisDe10Bugs++;
+}
+        
+if (bugsDia === 0) {
+diasSemBugs++;
+ }
+}
+
+let mediaBugs = totalBugs / diasSprint;
+
+relatorioTexto += "--------------------\n";
+relatorioTexto += "Total de bugs: " + totalBugs + "\n";
+relatorioTexto += "Média de bugs: " + mediaBugs + "\n";
+relatorioTexto += "Maior quantidade de bugs: " + maiorBugs + "\n";
+relatorioTexto += "Dia com mais bugs: " + diaMaisBugs + "\n";
+relatorioTexto += "Menor quantidade de bugs: " + menorBugs + "\n";
+relatorioTexto += "Dia com menos bugs: " + diaMenosBugs + "\n";
+relatorioTexto += "Dias com mais de 10 bugs: " + diasMaisDe10Bugs + "\n";
+ relatorioTexto += "Dias sem bugs: " + diasSemBugs;
+
+document.getElementById("relatorioBugsTextarea").value = relatorioTexto;
 }
