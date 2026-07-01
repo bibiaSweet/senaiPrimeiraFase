@@ -1,0 +1,53 @@
+body {
+    background-color: #ffb3c1;
+    color: #a4133c;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.card-exercicio {
+    border-bottom: 1px solid #ffb3c1;
+    padding: 15px 0;
+}
+
+.card-exercicio:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    color: #c9184a;
+}
+
+button {
+    background-color: #c9184a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #a4133c;
+}
